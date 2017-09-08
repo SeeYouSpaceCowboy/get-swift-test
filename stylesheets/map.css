@@ -1,0 +1,13 @@
+.map {
+  height: 100%;
+  position: relative;
+  margin-left: 25%;
+  background: #D3D3D3 url() center center no-repeat;
+  background-size: cover;
+}
+
+.map-options {
+  position: absolute;
+  top: 3em;
+  left: 2em;
+}

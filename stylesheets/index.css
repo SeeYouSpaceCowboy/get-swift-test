@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+p { font-size: 0.9em; }
+
+input,
+button {
+  margin-bottom: 1em;
+  border-radius: 3px;
+}
+
+input {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #DDD;
+}
+
+button {
+  min-width: 12em;
+  padding: 1em 2em;
+  margin-bottom: 1em;
+  border: 1px solid #EEE;
+  background-color: #EEE;
+  color: #DD7265;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.fill { width: 100%; }

@@ -1,0 +1,26 @@
+.logo {
+  float: left;
+  height: 3em;
+}
+
+.menu {
+  float: right;
+  height: 1em;
+  margin: 1em;
+}
+
+.navbar {
+  background-color: #DD7265;
+}
+
+.navbar > li {
+  float: right;
+}
+
+.navbar > li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1em 0.75em;
+  text-decoration: none;
+}

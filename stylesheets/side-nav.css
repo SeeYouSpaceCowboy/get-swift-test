@@ -1,0 +1,24 @@
+.side-nav {
+  width: 25%;
+  height: 100%;
+  padding: 1em;
+  float: left;
+  background-color: white;
+}
+
+.drivers,
+.jobs {
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 3px;
+  background-color: #EEE;
+  color: #DD7265;
+  text-align: center;
+}
+
+.drivers ul > li,
+.jobs ul > li {
+  padding: 1em;
+  background-color: white;
+  margin-top: 0.5em;
+}
