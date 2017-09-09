@@ -42,3 +42,14 @@ ul {
 }
 
 .fill { width: 100%; }
+
+.img {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: none;
+}
+
+.small {
+  width: 3em;
+  height: 3em;
+}

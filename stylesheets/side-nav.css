@@ -1,5 +1,5 @@
 .side-nav {
-  width: 25%;
+  width: 28%;
   height: 100%;
   padding: 1em;
   float: left;
@@ -12,13 +12,49 @@
   margin-bottom: 1em;
   border-radius: 3px;
   background-color: #EEE;
-  color: #DD7265;
   text-align: center;
 }
+
+.drivers > p,
+.jobs > p { color: #DD7265; }
 
 .drivers ul > li,
 .jobs ul > li {
   padding: 1em;
   background-color: white;
   margin-top: 0.5em;
+  border-radius: 3px;
+  overflow: auto;
+}
+
+.drivers ul > li div,
+.jobs ul > li div {
+  position: relative;
+  text-align: left;
+}
+
+.driver-avatar {
+  float: left;
+  border-radius: 5px;
+}
+
+.driver-detail {
+  margin-left: 3.5em;
+}
+
+.driver-name {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 745px) {
+
+.side-nav {
+  float: none;
+  width: 100%;
+}
+
 }

@@ -24,3 +24,7 @@
   padding: 1em 0.75em;
   text-decoration: none;
 }
+
+/* Media Queries */
+
+@media screen and (max-width: 745px) {}
