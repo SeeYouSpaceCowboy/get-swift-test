@@ -11,14 +11,14 @@
 
 <p align="center">
   <img
-    src=""
+    src="https://user-images.githubusercontent.com/7621982/30250571-99ce22f0-961e-11e7-982b-d07a33980fa9.png"
     alt="Screenshot of Website"
     width="700" />
     </br>
     Test for GetSwift Interview.
 </p>
 
-## Getting Started with GetSwift 
+## Getting Started with GetSwift
 These instructions will get you a copy of the project up and running on your local machine for development.
 
 ### Installing
@@ -28,7 +28,7 @@ Open terminal and run the following lines of code to clone this project.
  ```shell
  $ git clone https://github.com/SeeYouSpaceCowboy/get-swift-test.git
  ```
-Find the location of this project folder and open the `index.html` file in a browser, preferably Chrome. 
+Find the location of this project folder and open the `index.html` file in a browser, preferably Chrome.
 
 ## Built With
 Built using pure HTML & CSS.
