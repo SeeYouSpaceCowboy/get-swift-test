@@ -1,9 +1,19 @@
 .side-nav {
-  width: 28%;
-  height: 100%;
+  width: 35%;
+  height: 95.1%;
   padding: 1em;
   float: left;
   background-color: white;
+}
+
+.side-nav-open-tab { display: none; }
+
+.side-nav-close-tab { display: none; }
+
+.side-nav-open {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .drivers,
@@ -29,7 +39,6 @@
 
 .drivers ul > li div,
 .jobs ul > li div {
-  position: relative;
   text-align: left;
 }
 
@@ -39,22 +48,74 @@
 }
 
 .driver-detail {
+  position: relative;
   margin-left: 3.5em;
 }
 
-.driver-name {
+.driver-detail-right {
   position: absolute;
-  top: 0.5em;
-  left: 0.5em;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+.job-detail {
+  position: relative;
+}
+
+.job-route {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.job-clock {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /* Media Queries */
 
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 480px) { /* mobile */ }
 
-.side-nav {
-  float: none;
-  width: 100%;
+@media screen and (max-width: 780px) { /* tablets */
+
+  .side-nav { display: none; }
+
+  .side-nav-open-tab {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 0;
+    min-width: 8em;
+    height: 5em;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: -4em;
+    border-top: 1px solid #ddd;
+    border-radius: 1000px 1000px 0 0;
+    background-color: white;
+  }
+
+  .side-nav-close-tab {
+    display: block;
+    width: 100%;
+  }
 }
+
+@media screen and (max-width: 930px) {
+
+  .driver-detail-right { position: inherit;}
+
+  .job-route { display: none; }
+
+  .job-clock { display: none; }
+}
+
+@media screen and (min-width: 1200px) { /* large */
+
+  .side-nav { width: 400px; }
 
 }

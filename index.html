@@ -9,26 +9,36 @@
     <link rel="stylesheet" href="./stylesheets/side-nav.css">
     <link rel="stylesheet" href="./stylesheets/map.css">
 
+    <!-- Javscripts -->
+    <script type="text/javascript" src="./javascripts/side-nav.js"></script>
+
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+    <link rel="apple-touch-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="167x167" href="./favicon.ico">
 
     <title>GetSwift - Delivery Management Software</title>
   </head>
   <body>
-    <ul class='navbar'>
-      <img class='logo' src="./assets/logo.png" alt="logo">
+    <header>
+      <nav>
+        <img class='logo' src="./assets/logo.png" alt="logo">
 
-      <img class='menu' src="./assets/menu.png" alt="MENU">
-      <li><a href="#">REPORTS</a></li>
-      <li><a href="#">MAP</a></li>
-      <li><a href="#">+ ADD</a></li>
-    </ul>
+        <img class='menu' src="./assets/menu.png" alt="MENU">
+        <ul class='navbar'>
+          <li><a href="#">REPORTS</a></li>
+          <li><a href="#">MAP</a></li>
+          <li><a href="#">+ ADD</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="side-nav">
+    <button class="side-nav-open-tab" type="button" onclick="openSideNav()">Open</button>
+
+    <div id="sideNav" class="side-nav">
+      <button class="side-nav-close-tab" type="button"  onclick="closeSideNav()">Close</button>
       <input
         type="text"
         placeholder="search" />
@@ -43,6 +53,11 @@
             <div class="driver-detail">
               <p><strong style="color: red;">Elon Musk</strong><p>
               <p>1 jobs</p>
+
+              <div class="driver-detail-right">
+                <p class="right"><strong>AVAILABLE IN</strong></p>
+                <p class="right">19 mins</p>
+              </div>
             </div>
           </li>
         </ul>
@@ -52,11 +67,15 @@
         <p>ALL JOBS (1)</p>
         <ul>
           <li>
-            <div class="">
+            <div class="job-detail">
               <p>2244308</p>
               <p><span style="color: #DD7265;">NYC Warehouse</span></p>
               <p><strong style="color: #2d1;">Jonathan Rosham</strong></p>
               <p><strong style="color: red;">Due 10 days ago</strong></p>
+
+              <p class="job-route"><strong style="color: red;">EN ROUTE</strong></p>
+
+              <img class="tiny job-clock" src="./assets/clock.png" alt="time">
             </div>
           </li>
         </ul>

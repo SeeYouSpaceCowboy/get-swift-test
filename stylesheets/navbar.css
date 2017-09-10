@@ -1,4 +1,9 @@
+nav {
+  background-color: #DD7265;
+}
+
 .logo {
+  display: block;
   float: left;
   height: 3em;
 }
@@ -9,13 +14,7 @@
   margin: 1em;
 }
 
-.navbar {
-  background-color: #DD7265;
-}
-
-.navbar > li {
-  float: right;
-}
+.navbar > li { float: right; }
 
 .navbar > li a {
   display: block;
@@ -27,4 +26,23 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 745px) {}
+@media screen and (max-width: 480px) { /* mobile */
+
+  .logo {
+    float: none;
+    margin: 0 auto 0;
+  }
+
+  .navbar > li {
+    width: 33%;
+  }
+
+}
+
+@media screen and (max-width: 780px) { /* tablets */ }
+
+@media screen and (max-width: 480px) { /* large */
+
+
+
+}

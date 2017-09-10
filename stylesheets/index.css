@@ -41,6 +41,8 @@ ul {
   overflow: hidden;
 }
 
+/* Generic Classes */
+
 .fill { width: 100%; }
 
 .img {
@@ -53,3 +55,14 @@ ul {
   width: 3em;
   height: 3em;
 }
+
+.tiny {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 480px) { /* mobile */ }
+
+@media screen and (max-width: 780px) { /* tablets */ }
