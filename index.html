@@ -12,6 +12,64 @@
     <!-- Javscripts -->
     <script type="text/javascript" src="./javascripts/side-nav.js"></script>
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qz6rgq2nHVtYh-vRHbuzqJ5LBqc8KhU&callback=initMap">
+    </script>
+    <script>
+      var map
+      var getSwift = {
+        lat: 40.7365560,
+        lng: -74.0058350
+      }
+
+      /**
+       * The CenterControl adds a control to the map that recenters the map on
+       * GetSwift.
+       * This constructor takes the control DIV as an argument.
+       * @constructor
+       */
+      function CenterControl(controlDiv, map) {
+        // Set CSS for the Options buttons.
+        var controlUI = document.createElement('button')
+        controlUI.className += 'map-options'
+        controlUI.innerHTML = 'Options'
+        controlDiv.appendChild(controlUI)
+
+        // Setup the click event listeners: simply set the map to center again to GetSwift.
+        controlUI.addEventListener('click', function() {
+          map.setCenter(getSwift)
+        })
+
+      }
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: getSwift,
+          mapTypeControl: false
+        })
+
+        /*
+         * marker creater function
+         */
+        var marker = new google.maps.Marker({
+          position: getSwift,
+          map: map,
+          title: 'GetSwif NYC HQ'
+        })
+
+        marker.setMap(map)
+
+        // Create the DIV to hold the control and call the CenterControl()
+        // constructor passing in this DIV.
+        var centerControlDiv = document.createElement('div')
+        var centerControl = new CenterControl(centerControlDiv, map)
+
+        centerControlDiv.index = 1
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(centerControlDiv)
+      }
+    </script>
+
+
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="apple-touch-icon" href="./favicon.ico">
@@ -82,8 +140,6 @@
       </div>
     </div>
 
-    <div class="map">
-      <button class='map-options' type="button" name="button">OPTIONS</button>
-    </div>
+    <div id="map" class="map"></div>
   </body>
 </html>
