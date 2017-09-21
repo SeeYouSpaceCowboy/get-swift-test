@@ -20,19 +20,16 @@
         lat: 40.7365560,
         lng: -74.0058350
       }
+      var destination = {
+        lat: 40.7269511,
+        lng: -73.9814383
+      }
 
-      /**
-       * The CenterControl adds a control to the map that recenters the map on
-       * GetSwift.
-       * This constructor takes the control DIV as an argument.
-       * @constructor
-       */
-      function CenterControl(controlDiv, map) {
-        // Set CSS for the Options buttons.
+      function customUI(wrapperDiv, map) {
         var controlUI = document.createElement('button')
         controlUI.className += 'map-options'
         controlUI.innerHTML = 'Options'
-        controlDiv.appendChild(controlUI)
+        wrapperDiv.appendChild(controlUI)
 
         // Setup the click event listeners: simply set the map to center again to GetSwift.
         controlUI.addEventListener('click', function() {
@@ -42,30 +39,40 @@
       }
 
       function initMap() {
+        // Appending Google Maps
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
+          zoom: 14,
           center: getSwift,
           mapTypeControl: false
         })
 
-        /*
-         * marker creater function
-         */
+        // Adding GetSwift Marker
         var marker = new google.maps.Marker({
           position: getSwift,
           map: map,
+          icon: "https://cdn2.iconfinder.com/data/icons/vehicles-7/24/vehicles-03-32.png",
           title: 'GetSwif NYC HQ'
         })
 
-        marker.setMap(map)
+        var markerDestination = new google.maps.Marker({
+          position: destination,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Destination'
+        })
+        markerDestination.addListener('click', bounce);
 
-        // Create the DIV to hold the control and call the CenterControl()
-        // constructor passing in this DIV.
-        var centerControlDiv = document.createElement('div')
-        var centerControl = new CenterControl(centerControlDiv, map)
+        function bounce() {
+          markerDestination.setAnimation(google.maps.Animation.BOUNCE);
+          setTimeout(function(){ markerDestination.setAnimation(null) }, 700);
+        }
 
-        centerControlDiv.index = 1
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(centerControlDiv)
+        // Adding Custom UI to Google Maps
+        var wrapperDiv = document.createElement('div')
+        var centerControl = new customUI(wrapperDiv, map)
+
+        wrapperDiv.index = 1
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(wrapperDiv)
       }
     </script>
 
